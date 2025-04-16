@@ -6,10 +6,7 @@ A chat application built with **Node.js**, **Express**, **MongoDB**, and vanilla
 
 ## 🚀 Features
 
-- Real-time messaging using WebSockets (Socket.io)
 - User-friendly chat interface
-- Join rooms by username and room name
-- Displays a list of active users in each room
 - Messages stored in MongoDB for persistence
 - Fully responsive design
 
