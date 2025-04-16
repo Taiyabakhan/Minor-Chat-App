@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Chat</title>
+    <link rel="stylesheet" href="/showstyle.css">
+</head>
+<body>
+    <h1>Chat Details</h1>
+    <p>Chat ID: <b><%= c._id %></b></p>
+    <p>Sent from: <b><%= c.from %></b></p>
+    <p>Sent to: <b><%= c.to %></b></p>
+    <p>Message:</p>
+    <blockquote><%= c.msg %></blockquote>
+    <div class="link-container">
+        <a href="/chats/<%= c._id %>/edit">Edit this chat</a>
+        <a href="/chats">Back to Chats</a>
+    </div>
+</body>
+</html>

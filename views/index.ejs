@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <h3>All Chats!!</h3>
+        <% if (user) { %>
+            <div class="user-info">
+                <p>Welcome, <%= user.username %>!</p>
+                <form method="get" action="chats/logout">
+                    <button>Logout</button>
+                </form>
+            </div>
+        <% } else { %>
+            <div class="user-info">
+                <a href="/login">Login</a> | <a href="/register">Register</a>
+            </div>
+        <% } %>
+        <form method="get" action="chats/new">
+            <button>New Chat </button>
+        </form><br>
+        <%for(let chat of chats){%>
+            <div class="chatcss">
+                <p>From : <%=chat.from%></p>
+                <p>Message:</p>
+                <div class="msgcss"><%=chat.msg%>
+                <br><br>
+                <form method="get" action="/chats/<%=chat._id%>/edit"><button style="background-color: chartreuse;">Edit the Chat</button>
+                </form>
+                <form method="post" action="/chats/<%=chat._id%>?_method=DELETE"> 
+                    <button style="background-color: chartreuse;">Delete the chat</button>
+                </form>
+                 <form action="/chats/<%=chat._id%>" method="get">
+                    <button style="background-color: chartreuse;">Show The Chat </button>
+                 </form>
+            </div>
+                <p>Recieved By:<%=chat.to %></p>
+                <hr>
+                <p><%=chat.created_at.toString().split(" ")[4]%></p>
+                <p><%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
+            </div>
+        <br><br>
+        <%}%>
+</body>
+</html>
+
