@@ -1,6 +1,6 @@
 # 💬 Minor Chat App
 
-A real-time chat application built with **Node.js**, **Express**, **MongoDB**, and vanilla **HTML, CSS, and JavaScript**. Users can join chat rooms, send messages instantly, and see who's online in real time.
+A chat application built with **Node.js**, **Express**, **MongoDB**, and vanilla **HTML, CSS, and JavaScript**.
 
 ---
 
